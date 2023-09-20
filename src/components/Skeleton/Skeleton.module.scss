@@ -1,0 +1,56 @@
+.skeleton {
+  width: 100px;
+  height: 100px;
+  position: relative;
+
+  overflow: hidden;
+  border-radius: 5px;
+
+
+  &.light {
+    background-color:  #d8d8d9;
+
+    &::before {
+      background: linear-gradient(
+                      to right,
+                      transparent 0%,
+                      #e2e2e2 50%,
+                      transparent 100%
+      );
+    }
+  }
+
+  &.dark {
+    background-color: #15202B;
+
+    &::before {
+      background: linear-gradient(
+                      to right,
+                      transparent 0%,
+                      #38444d 50%,
+                      transparent 100%
+      );
+    }
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -150px;
+    top: 0;
+    height: 100%;
+    width: 80%;
+    animation: load 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+}
+
+@keyframes load {
+  from {
+    left: -150px;
+  }
+
+  to {
+    left: 100%;
+  }
+}
