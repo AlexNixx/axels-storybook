@@ -1,4 +1,3 @@
-import './Skeleton.module.scss';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Skeleton } from './Skeleton';

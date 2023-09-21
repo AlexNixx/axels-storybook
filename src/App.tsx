@@ -1,11 +1,12 @@
-import { Skeleton } from './components/Skeleton';
+import { Button } from 'components/Button';
 
 import './styles/index.scss';
+import { TbHandClick } from 'react-icons/tb';
 
 export const App = () => {
     return (
         <div>
-            <Skeleton width={300} height={300} borderRadius={180} />
+            <Button icon={<TbHandClick />}>Press me</Button>
         </div>
     );
 };
