@@ -9,6 +9,7 @@
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview",
         "test:ui": "loki test",
+        "test:ui:approve": "loki approve",
         "storybook": "storybook dev -p 6006",
         "storybook:build": "storybook build",
         "chromatic:build": "npx chromatic --project-token=chpt_050a01242ea9b0c"
