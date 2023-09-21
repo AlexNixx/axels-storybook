@@ -5,7 +5,7 @@ import { TbHandClick } from 'react-icons/tb';
 
 const meta: Meta<typeof Button> = {
     component: Button,
-    title: 'Button',
+    title: 'Components/Button',
     tags: ['autodocs'],
     args: {
         theme: 'outline',
@@ -47,6 +47,27 @@ export const Link: Story = {
         children: 'Press me',
         theme: 'link'
     }
+};
+
+export const Size: Story = {
+    render: args => (
+        <div
+            style={{
+                display: 'flex',
+                gap: '15px'
+            }}
+        >
+            <Button {...args} size='small'>
+                Press me
+            </Button>
+            <Button {...args} size='medium'>
+                Press me
+            </Button>
+            <Button {...args} size='large'>
+                Press me
+            </Button>
+        </div>
+    )
 };
 
 export const Loading: Story = {

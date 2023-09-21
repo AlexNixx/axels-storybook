@@ -1,12 +1,19 @@
-import { Button } from 'components/Button';
-
 import './styles/index.scss';
-import { TbHandClick } from 'react-icons/tb';
+
+import { SignIn } from 'components/SignIn/SingIn.tsx';
 
 export const App = () => {
+    const appStyle = {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100vw',
+        height: '100vh'
+    };
+
     return (
-        <div>
-            <Button icon={<TbHandClick />}>Press me</Button>
+        <div style={appStyle}>
+            <SignIn />
         </div>
     );
 };
