@@ -1,9 +1,8 @@
 import { ChangeEvent, SyntheticEvent, useState } from 'react';
-import { AiFillLock, AiFillUnlock } from 'react-icons/ai';
-import { BiError } from 'react-icons/bi';
+import { AiFillLock, AiFillUnlock, AiOutlineMail } from 'react-icons/ai';
 import { z } from 'zod';
 
-import { Input } from 'components/Input/Input.tsx';
+import { Input } from 'components/Input/Input';
 import { Button } from 'components/Button';
 
 import styles from './SignIn.module.scss';
@@ -18,13 +17,12 @@ export const SignIn = () => {
         email: '',
         password: ''
     });
-
     const [errors, setErrors] = useState({
         email: '',
         password: ''
     });
     const [loginSuccess, setLoginSuccess] = useState(false);
-    const [showPassword, setShowPassword] = useState(false);
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
     const handleSubmit = (event: SyntheticEvent) => {
         event.preventDefault();
@@ -61,49 +59,44 @@ export const SignIn = () => {
         setErrors({ ...errors, password: '' });
     };
 
+    const passwordIcon = () =>
+        isPasswordVisible ? (
+            <AiFillLock
+                onClick={() => setIsPasswordVisible(!isPasswordVisible)}
+                data-testid='hidePassword'
+            />
+        ) : (
+            <AiFillUnlock
+                onClick={() => setIsPasswordVisible(!isPasswordVisible)}
+                data-testid='showPassword'
+            />
+        );
+
     if (loginSuccess) return <p>Login successful</p>;
 
     return (
         <form onSubmit={handleSubmit} className={styles.formContainer}>
             <h1 className={styles.title}>Welcome back</h1>
-            <div className={styles.group}>
-                <Input
-                    type='text'
-                    placeholder='Email'
-                    value={formData.email}
-                    onChange={handleSetLogin}
-                    data-testid='email'
-                />
-                {errors.email && (
-                    <span className={styles.errorMessage}>
-                        <BiError />
-                        {errors.email}
-                    </span>
-                )}
-            </div>
-            <div className={styles.group}>
-                <Input
-                    type={showPassword ? 'text' : 'password'}
-                    placeholder='Password'
-                    value={formData.password}
-                    onChange={handleSetPassword}
-                    icon={
-                        showPassword ? (
-                            <AiFillLock data-testid='hidePassword' />
-                        ) : (
-                            <AiFillUnlock data-testid='showPassword' />
-                        )
-                    }
-                    onIconClick={() => setShowPassword(!showPassword)}
-                    data-testid='password'
-                />
-                {errors.password && (
-                    <span className={styles.errorMessage}>
-                        <BiError />
-                        {errors.password}
-                    </span>
-                )}
-            </div>
+            <Input
+                type='text'
+                placeholder='Email'
+                prefixIcon={<AiOutlineMail />}
+                value={formData.email}
+                onChange={handleSetLogin}
+                errorMessage={errors.email}
+                fullWidth
+                data-testid='email'
+            />
+            <Input
+                type={isPasswordVisible ? 'text' : 'password'}
+                placeholder='Password'
+                errorMessage={errors.password}
+                fullWidth
+                suffixIcon={passwordIcon()}
+                value={formData.password}
+                onChange={handleSetPassword}
+                data-testid='password'
+            />
             <Button
                 type='submit'
                 fullWidth

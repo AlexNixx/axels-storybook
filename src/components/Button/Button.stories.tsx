@@ -15,13 +15,6 @@ const meta: Meta<typeof Button> = {
         fullWidth: false,
         reverse: false,
         type: 'button'
-    },
-    argTypes: {
-        icon: {
-            control: {
-                type: 'none'
-            }
-        }
     }
 };
 

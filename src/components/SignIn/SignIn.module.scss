@@ -1,28 +1,28 @@
 .formContainer {
-  width: 30rem;
-  padding: 2rem;
-  border-radius: 5px;
-  box-shadow: var(--box-shadow);
+    width: 30rem;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
 
-  .title {
-    font-size: var(--fs-xl);
-    color: var(--color-primary);
-    margin-bottom: 1rem;
-    text-align: center;
-  }
+    .title {
+        font-size: var(--fs-xl);
+        color: var(--color-primary);
+        margin-bottom: 1rem;
+        text-align: center;
+    }
 
-  .group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    height: 5rem;
-  }
+    .group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        height: 5rem;
+    }
 
-  .errorMessage {
-    display: flex;
-    align-items: center;
-    gap: 0.25rem;
-    color: var(--color-error);
-    font-size: 12px;
-  }
+    .errorMessage {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+        color: var(--color-error);
+        font-size: 12px;
+    }
 }

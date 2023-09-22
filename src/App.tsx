@@ -1,6 +1,5 @@
 import './styles/index.scss';
-
-import { SignIn } from 'components/SignIn/SingIn.tsx';
+import { SignIn } from 'components/SignIn/SignIn.tsx';
 
 export const App = () => {
     const appStyle = {

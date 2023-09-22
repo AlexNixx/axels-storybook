@@ -3751,7 +3751,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/preview-api@npm:7.4.3":
+"@storybook/preview-api@npm:7.4.3, @storybook/preview-api@npm:^7.4.3":
   version: 7.4.3
   resolution: "@storybook/preview-api@npm:7.4.3"
   dependencies:
@@ -5047,6 +5047,7 @@ __metadata:
     "@storybook/addon-onboarding": ^1.0.8
     "@storybook/blocks": ^7.4.3
     "@storybook/jest": ^0.2.2
+    "@storybook/preview-api": ^7.4.3
     "@storybook/react": ^7.4.3
     "@storybook/react-vite": ^7.4.3
     "@storybook/testing-library": ^0.2.1
